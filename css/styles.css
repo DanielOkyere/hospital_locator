@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.Container {
+  margin: 0 auto 0 auto;
+  padding: 0 7rem 0 7rem;
+  max-width: 1400px;
+}
+
+.Nav {
+  color: #313330;
+  background-color: #dfefea;
+}
+
+.Nav__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+}
+
+.Logo {
+  width: 60px;
+}
+
+.Name {
+  font-size: 2rem;
+  font-weight: 500;
+}
+.Nav__link {
+  text-decoration: none;
+  color: #313330;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.Nav__link:hover {
+  text-decoration: underline;
+}
+
+.Main__container {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1rem;
+}
+
+.Left__column,
+.Right__column,
+.Middle__column {
+  background-color: #dfefea;
+  height: 85vh;
+}
