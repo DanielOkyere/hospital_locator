@@ -9,8 +9,22 @@ class UserCreate(UserBase):
     last_name: str
     
 class User(UserBase):
-    id: int
-    is_active: bool
+    id: int | None
+    is_active: bool | None
+    email: str
+    first_name: str
+    last_name:str
     
     class Config:
         orm_mode = True
+
+    
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+    
+class TokenData(BaseModel):
+    email: str | None = None
+    
+class UserInDB(User):
+    hashed_password: str
