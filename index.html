@@ -16,11 +16,33 @@
       </div>
     </nav>
     <div class="Main__container">
-      <div class="Left__column">~</div>
-      <div class="Middle__column"></div>
-      <div class="Right__column"></div>
+      <div class="Main__container-items Container">
+        <div class="Left__column">
+          <div class="Input__container">
+            <h6 class="Input__header">Enter illness</h6>
+            <!-- SERACH INPUT TO ENTER KEYWORDS -->
+            <input class="Search__input" type="text" />
+            <!-- BUTTON TO CLICK TO INITIATE SEARCH -->
+            <button class="Search__btn">Search Hospital</button>
+          </div>
+          <div class="Hospital">
+            <h3 class="Hospitals__Header">HOSPITALS AVAILABLE</h3>
+            <!-- DIV TO DISPLAY LIST OF HOSPITAL BASED ON KEYWORDS -->
+            <div class="Hopitals__list"></div>
+          </div>
+        </div>
+        <div class="Middle__column">
+          <h3 class="Map__header">LOCATION ON MAP</h3>
+          <!-- DIV TO DISPLAY MAP -->
+          <div class="Display__map"></div>
+        </div>
+        <div class="Right__column">
+          <h3 class="Hospital__info-header">HOSPITAL INFORMATION</h3>
+          <!-- DIV TO DISPLAY SELECTED HOSPITAL INFORMATION -->
+          <div class="Hospital__info"></div>
+        </div>
+      </div>
     </div>
-
     <script src="./js/script.js"></script>
   </body>
 </html>
