@@ -1,4 +1,4 @@
-from api.models import users
+from api.models import users.py
 import unittest
 from api.database import Base
 from sqlalchemy import Column, Integer, String, Boolean
