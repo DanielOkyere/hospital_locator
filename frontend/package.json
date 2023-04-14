@@ -9,11 +9,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@googlemaps/js-api-loader": "^1.15.1",
     "@react-google-maps/api": "^2.18.1",
     "@types/googlemaps": "^3.43.3",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.22",
+=======
+>>>>>>> 31c155a (Setup)
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -21,7 +24,10 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
+<<<<<<< HEAD
     "tailwindcss": "^3.3.1",
+=======
+>>>>>>> 31c155a (Setup)
     "typescript": "^4.9.3",
     "vite": "^4.2.0"
   }

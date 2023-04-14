@@ -2,10 +2,19 @@
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+=======
+body{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+>>>>>>> 31c155a (Setup)
 .container {
     margin: 0 auto;
     width: 80%;
     padding: 2em;
+<<<<<<< HEAD
 }
 
 body {
@@ -71,4 +80,6 @@ footer {
 #map{
 	height: 400px;
 	width: 100%;
+=======
+>>>>>>> 31c155a (Setup)
 }
