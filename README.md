@@ -11,7 +11,7 @@ The project is focused on Ghana and is looking to be expanded to global communit
 ## Team
 - [Daniel Okyere]
 - [Gabriel Ahiamata]
-- [Tobex ]
+- [Tobex Iloabuchi]
 
 ## Requirements
 - Python 3.7+
