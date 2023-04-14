@@ -1,5 +1,6 @@
 """Test suite for the api.models.schemas.py module"""
 from api.database import Base
+<<<<<<< HEAD
 from api.models.user import schemas
 from api.models.user.users import User
 import unittest
@@ -80,3 +81,17 @@ class TestUser(unittest.TestCase):
 
 if __name__ == "__main__":
         unittest.main()
+=======
+from api.models import schemas.py
+import unittest
+
+class TestUserBase(unittest.TestCase):
+    #test for the UserBase class
+    def setUpClass(self):
+        #Set up class instance for tests
+        self.user_base = UserBase()
+
+    def test_issubclass(self):
+        """Test that UserBase is a sub-class of BaseModel"""
+        self.assertTrue(issubclass(type(self.user_base), BaseModel))
+>>>>>>> 23f3f8f (test suite for the api.models.schemas module)
