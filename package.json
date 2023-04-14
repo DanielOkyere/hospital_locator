@@ -1,0 +1,24 @@
+{
+  "name": "hospital_locator",
+  "version": "1.0.0",
+  "description": "This is a final project for Alx cohort 2022/23",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielOkyere/hospital_locator.git"
+  },
+  "keywords": [
+    "hospital",
+    "locator"
+  ],
+  "author": "Daniel Okyere",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielOkyere/hospital_locator/issues"
+  },
+  "homepage": "https://github.com/DanielOkyere/hospital_locator#readme"
+}
