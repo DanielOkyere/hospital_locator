@@ -126,4 +126,10 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.user_create.last_name), str)
         self.assertEqual(type(self.user.id), int)
         self.assertEqual(type(self.user.is_active), bool)
+<<<<<<< HEAD
 >>>>>>> 116e790 (test suite for schemas.py module)
+=======
+
+if __name__ == "__main__":
+        unittest.main()
+>>>>>>> 2710675 (unittest module for users.py and schemas.py)
