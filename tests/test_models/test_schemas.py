@@ -41,3 +41,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.user_create.last_name), str)
         self.assertEqual(type(self.user.id), int)
         self.assertEqual(type(self.user.is_active), bool)
+
+if __name__ == "__main__":
+        unittest.main()

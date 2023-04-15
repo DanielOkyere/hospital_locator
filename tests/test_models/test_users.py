@@ -24,3 +24,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.u.is_active), bool)
         self.assertEqual(type(self.u.first_name), str)
         self.assertEqual(type(self.u.last_name), str)
+
+if __name__ == "__main__":
+        unittest.main()
