@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
-from api.models import schemas, crud
+from api.models.user import schemas
 from sqlalchemy.orm import Session
 from api.depencies.db_depencies import get_db
+from api.models.user import crud
 
 router = APIRouter(
     prefix="/users", tags=["users"], responses={404: {"descripiton": "Not Found"}}

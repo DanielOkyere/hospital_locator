@@ -1,12 +1,12 @@
 from typing import Annotated
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi import APIRouter, Depends, HTTPException, status
-from api.models.schemas import UserSchema, Token, TokenData
+from api.models.user.schemas import UserSchema, Token, TokenData
 from sqlalchemy.orm import Session
 from api.depencies.db_depencies import get_db
 from decouple import config
 from datetime import timedelta
-from api.models.crud import (
+from api.models.user.crud import (
     authenticate_user,
     create_access_token,
     get_current_active_user,
