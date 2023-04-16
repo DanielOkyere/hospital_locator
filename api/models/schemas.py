@@ -7,13 +7,13 @@ class UserCreate(UserBase):
     password: str
     first_name: str
     last_name: str
+
     
-class User(UserBase):
-    id: int | None
+class UserSchema(UserBase):
     is_active: bool | None
-    email: str
-    first_name: str
-    last_name:str
+    first_name: str | None
+    last_name:str | None
+    id: int
     
     class Config:
         orm_mode = True
@@ -26,5 +26,8 @@ class Token(BaseModel):
 class TokenData(BaseModel):
     email: str | None = None
     
-class UserInDB(User):
+class UserInDB(UserSchema):
     hashed_password: str
+    
+class UserDelete(BaseModel):
+    id: int | None = None

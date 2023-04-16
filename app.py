@@ -10,7 +10,7 @@ app = FastAPI()
 app.include_router(user_routes.router)
 app.include_router(auth.router)
 
-@app.get('/')
+
+@app.get("/")
 async def home():
     return {"Hello World"}
-
