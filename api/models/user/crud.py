@@ -5,7 +5,7 @@ from passlib.context import CryptContext
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
-from api.models.schemas import UserSchema, TokenData, UserInDB
+from api.models.user.schemas import UserSchema, TokenData, UserInDB
 from fastapi import status, HTTPException, Depends
 from typing import Annotated
 from decouple import config

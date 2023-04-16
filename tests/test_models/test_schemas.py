@@ -1,14 +1,15 @@
 """Test suite for the api.models.schemas.py module"""
 from api.database import Base
-from api.models import schemas.py
+from api.models.user import schemas
+from api.models.user.users import User
 import unittest
 
 class TestUser(unittest.TestCase):
     #testing the schema module
     def setUpClass(self):
         #Set up class instance for tests
-        self.user_base = UserBase()
-        self.user_create = UserCreate()
+        self.user_base = schemas.UserBase()
+        self.user_create = schemas.UserCreate()
         self.user = User()
 
     def test_issubclass(self):
