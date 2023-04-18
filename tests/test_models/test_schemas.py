@@ -11,13 +11,15 @@ class TestUser(unittest.TestCase):
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
         self.user_schema = schemas.UserSchema()
+        self.user_token = schemas.Token()
 
     def test_issubclass(self):
-        """Test that UserBase is a sub-class of BaseModel,
+        """Test that UserBase, Token are sub-classes of BaseModel,
         UserCreate, UserSchema and User are subclasses of UserBase"""
         self.assertTrue(issubclass(type(self.user_base), BaseModel))
         self.assertTrue(issubclass(type(self.user_create), UserBase))
         self.assertTrue(issubclass(type(self.user_schema), UserBase))
+        self.assertTrue(issubclass(type(self.user_token), Base model))
 
     def test_user_base_attrs(self):
         #test that the attribute of the UserBase class exists
