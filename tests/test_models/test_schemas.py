@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.user.id), int)
         self.assertEqual(type(self.user.is_active), bool)
 
-    def test_user_attrs(self):
+    def test_user_schema_attrs(self):
         #test that the attributes of the UserSchema class exists
         self.assertTrue('id' in self.user_schema)
         self.assertTrue('is_active' in self.user_schema)
