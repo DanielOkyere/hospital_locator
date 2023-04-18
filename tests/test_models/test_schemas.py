@@ -11,7 +11,8 @@ class TestUser(unittest.TestCase):
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
         self.user_schema = schemas.UserSchema()
-        self.user_token = schemas.Token()
+        self.token = schemas.Token()
+        self.token_data = schemas.TokenData()
 
     def test_issubclass(self):
         """Test that UserBase, Token are sub-classes of BaseModel,
@@ -43,6 +44,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.user_schema.last_name), str)
         self.assertEqual(type(self.token.access_token), str)
         self.assertEqual(type(self.token.token_type), str)
+        self.assertEqual(type(self.token_data.email), str)
 
     def test_user_schema_attrs(self):
         #test that the attributes of the UserSchema class exists
@@ -55,6 +57,10 @@ class TestUser(unittest.TestCase):
         #test that the attributes of the Token class exists
         self.assertTrue('access_token' in self.token)
         self.assertTrue('token_type' in self.token)
+    
+    def test_token_data_attrs(self):
+        #test that the attributes of TokenData class exists
+        self.assertTrue(hasattr(TokenData, "email"))
 
 if __name__ == "__main__":
         unittest.main()
