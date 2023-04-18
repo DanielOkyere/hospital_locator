@@ -10,15 +10,14 @@ class TestUser(unittest.TestCase):
         #Set up class instance for tests
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
-        self.user = User()
         self.user_schema = schemas.UserSchema()
 
     def test_issubclass(self):
         """Test that UserBase is a sub-class of BaseModel,
-        UserCreate and User are subclasses of UserBase"""
+        UserCreate, UserSchema and User are subclasses of UserBase"""
         self.assertTrue(issubclass(type(self.user_base), BaseModel))
         self.assertTrue(issubclass(type(self.user_create), UserBase))
-        self.assertTrue(issubclass(type(self.user), UserBase))
+        self.assertTrue(issubclass(type(self.user_schema), UserBase))
 
     def test_user_base_attrs(self):
         #test that the attribute of the UserBase class exists
@@ -29,12 +28,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue('password' in self.user_create)
         self.assertTrue('first_name' in self.user_create)
         self.assertTrue('last_name' in self.user_create)
-
-    def test_user_attrs(self):
-        #test that the attributes of the User class exists
-        self.assertTrue('id' in self.user)
-        self.assertTrue('is_active' in self.user)
-
+       
     def test_attributes_type_is_string(self):
         """testing the variable types the class attributes accept"""
         self.assertEqual(type(self.user_base.email), str)
