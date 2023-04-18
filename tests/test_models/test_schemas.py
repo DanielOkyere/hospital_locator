@@ -31,14 +31,18 @@ class TestUser(unittest.TestCase):
         self.assertTrue('first_name' in self.user_create)
         self.assertTrue('last_name' in self.user_create)
        
-    def test_attributes_type_is_string(self):
+    def test_attributes_type(self):
         """testing the variable types the class attributes accept"""
         self.assertEqual(type(self.user_base.email), str)
         self.assertEqual(type(self.user_create.password), str)
         self.assertEqual(type(self.user_create.first_name), str)
         self.assertEqual(type(self.user_create.last_name), str)
-        self.assertEqual(type(self.user.id), int)
-        self.assertEqual(type(self.user.is_active), bool)
+        self.assertEqual(type(self.user_schema.id), int)
+        self.assertEqual(type(self.user_schema.is_active), bool)
+        self.assertEqual(type(self.user_schema.first_name), str)
+        self.assertEqual(type(self.user_schema.last_name), str)
+        self.assertEqual(type(self.token.access_token), str)
+        self.assertEqual(type(self.token.token_type), str)
 
     def test_user_schema_attrs(self):
         #test that the attributes of the UserSchema class exists
