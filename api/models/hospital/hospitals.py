@@ -9,5 +9,6 @@ class Hospital(Base):
     __tablename__ = 'hospital'
     id = Column(Integer, nullable=False, primary_key=True)
     name = Column(String, nullable=False, unique=True)
-    coordinates=Column(Geometry('POLYGON'))
+    coordinates=Column(Geometry(geometry_type='POINT', srid=4326))
     specialisation=Column(String)
+    address=Column(String)
