@@ -47,5 +47,10 @@ class TestUser(unittest.TestCase):
         self.assertTrue('first_name' in self.user_schema)
         self.assertTrue('last_name' in self.user_schema)
 
+    def test_user_token_attrs(self):
+        #test that the attributes of the Token class exists
+        self.assertTrue('access_token' in self.token)
+        self.assertTrue('token_type' in self.token)
+
 if __name__ == "__main__":
         unittest.main()
