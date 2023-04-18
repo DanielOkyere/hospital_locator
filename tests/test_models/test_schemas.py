@@ -13,15 +13,20 @@ class TestUser(unittest.TestCase):
         self.user_schema = schemas.UserSchema()
         self.token = schemas.Token()
         self.token_data = schemas.TokenData()
+        self.user_in_db = schemas.UserInDB()
+        self.user_delete = schemas.UserDelete()
 
     def test_issubclass(self):
-        """Test that UserBase, Token, TokenData are sub-classes of BaseModel,
-        UserCreate, UserSchema and User are subclasses of UserBase"""
+        """Test that UserBase, Token, TokenData, UserDelete are sub-classes of BaseModel,
+        UserCreate, and UserSchema are subclasses of UserBase,
+        UserInDB is a subclass of UserSchema"""
         self.assertTrue(issubclass(type(self.user_base), BaseModel))
         self.assertTrue(issubclass(type(self.user_create), UserBase))
         self.assertTrue(issubclass(type(self.user_schema), UserBase))
         self.assertTrue(issubclass(type(self.token), BaseModel))
         self.assertTrue(issubclass(type(self.token_data), BaseModel))
+        self.assertTrue(issubclass(type(self.user_in_db), UserSchema))
+        self.assertTrue(issubclass(type(self.user_delete), BaseModel))
 
     def test_user_base_attrs(self):
         #test that the attribute of the UserBase class exists
@@ -46,6 +51,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.token.access_token), str)
         self.assertEqual(type(self.token.token_type), str)
         self.assertEqual(type(self.token_data.email), str)
+        self.assertEqual(type(self.user_in_db.hashed_password), str)
+        self.assertEqual(type(self.user_delete.id), int)
 
     def test_user_schema_attrs(self):
         #test that the attributes of the UserSchema class exists
@@ -62,6 +69,14 @@ class TestUser(unittest.TestCase):
     def test_token_data_attrs(self):
         #test that the attributes of TokenData class exists
         self.assertTrue(hasattr(TokenData, "email"))
+
+    def test_user_in_db_attrs(self):
+        #test that the attributes of UserInDB class exists
+        self.assertTrue(hasattr(UserInDB, "hashed_password"))
+
+    def test_user_delete_attr(self):
+        #testing that the attributes of UserDelete class exists
+        self.assertTrue(hasattr(UserDelete, "id"))
 
 if __name__ == "__main__":
         unittest.main()
