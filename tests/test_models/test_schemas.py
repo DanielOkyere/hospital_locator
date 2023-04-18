@@ -11,6 +11,7 @@ class TestUser(unittest.TestCase):
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
         self.user = User()
+        self.user_schema = schemas.UserSchema()
 
     def test_issubclass(self):
         """Test that UserBase is a sub-class of BaseModel,
@@ -42,6 +43,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(self.user_create.last_name), str)
         self.assertEqual(type(self.user.id), int)
         self.assertEqual(type(self.user.is_active), bool)
+
+    def test_user_attrs(self):
+        #test that the attributes of the UserSchema class exists
+        self.assertTrue('id' in self.user_schema)
+        self.assertTrue('is_active' in self.user_schema)
+        self.assertTrue('first_name' in self.user_schema)
+        self.assertTrue('last_name' in self.user_schema)
 
 if __name__ == "__main__":
         unittest.main()
