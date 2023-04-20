@@ -5,7 +5,9 @@ from decouple import config
 
 SQL_DATABASE_URL = config("DATABASE_URL")
 
-engine = create_engine(SQL_DATABASE_URL, echo=True)
+engine = create_engine(
+    SQL_DATABASE_URL,
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
