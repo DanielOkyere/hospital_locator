@@ -7,6 +7,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
 
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
