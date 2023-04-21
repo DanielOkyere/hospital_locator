@@ -5,10 +5,6 @@ from api.routes import user_routes, auth, hospital_routes
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
-<<<<<<< HEAD
-=======
-
->>>>>>> 31c155a (Setup)
 
 
 Base.metadata.create_all(bind=engine)
