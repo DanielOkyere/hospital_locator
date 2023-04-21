@@ -10,6 +10,7 @@ from fastapi.staticfiles import StaticFiles
 
 >>>>>>> 31c155a (Setup)
 
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
