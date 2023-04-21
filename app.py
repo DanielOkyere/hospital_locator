@@ -2,6 +2,7 @@ from fastapi import FastAPI, Depends, Request
 
 from api.database import engine, Base
 from api.routes import user_routes, auth, hospital_routes
+
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
