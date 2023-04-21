@@ -9,5 +9,5 @@ def get_hospitals(db: Session, skip: int = 0, limit: int = 100):
 def get_hospitalby_id(db: Session, hospital_id: int):
     return db.query(Hospital).filter(Hospital.id == hospital_id).first()
 
-def get_hospitalby_name(db: Session, hospital_name: str):
+def get_hospitalby_name(db: Session, skip: int , limit: int, hospital_name: str):
     return db.query(Hospital).filter(Hospital.name == hospital_name).first()
