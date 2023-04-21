@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>SHL</title>
+  </head>
+  <body>
+    <nav class="Nav">
+      <div class="Nav__items Container">
+        <img class="Logo" src="./images/logo.png" alt="Logo" />
+        <h3 class="Name">SPECIALIST HOSPITAL LOCATOR</h3>
+        <div class="Far__right-links">
+          <a class="Nav__link" href="./form.html">Sign-Up</a>
+          <a class="Nav__link" href="#">Team</a>
+        </div>
+      </div>
+    </nav>
+    <div class="Main__container">
+      <div class="Main__container-items Container">
+        <div class="Left__column">
+          <div class="Input__container">
+            <h6 class="Input__header">Enter Diagnosis.</h6>
+            <!-- SERACH INPUT TO ENTER KEYWORDS -->
+            <input class="Search__input" type="text" />
+            <!-- BUTTON TO CLICK TO INITIATE SEARCH -->
+            <button class="Search__btn">Search Hospital</button>
+          </div>
+          <div class="Hospital">
+            <h3 class="Hospitals__Header">Hospitals Available.</h3>
+            <!-- DIV TO DISPLAY LIST OF HOSPITAL BASED ON KEYWORDS -->
+            <div class="Hopitals__list"></div>
+          </div>
+        </div>
+        <div class="Middle__column">
+          <h3 class="Map__header">Location on Map.</h3>
+          <!-- DIV TO DISPLAY MAP -->
+          <div class="Display__map"></div>
+        </div>
+        <div class="Right__column">
+          <h3 class="Hospital__info-header">Hospital Information.</h3>
+          <!-- DIV TO DISPLAY SELECTED HOSPITAL INFORMATION -->
+          <div class="Hospital__info"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

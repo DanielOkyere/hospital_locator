@@ -1,13 +1,16 @@
 """Test suite for the api.models.schemas.py module"""
 from api.database import Base
+
 from api.models.user import schemas
 from api.models.user.users import User
+
 import unittest
 
 class TestUser(unittest.TestCase):
     #testing the schema module
     def setUpClass(self):
         #Set up class instance for tests
+
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
         self.user_schema = schemas.UserSchema()
@@ -27,6 +30,17 @@ class TestUser(unittest.TestCase):
         self.assertTrue(issubclass(type(self.token_data), BaseModel))
         self.assertTrue(issubclass(type(self.user_in_db), UserSchema))
         self.assertTrue(issubclass(type(self.user_delete), BaseModel))
+        self.user_base = UserBase()
+        self.user_create = UserCreate()
+        self.user = User()
+
+    def test_issubclass(self):
+        """Test that UserBase is a sub-class of BaseModel,
+        UserCreate and User are subclasses of UserBase"""
+        self.assertTrue(issubclass(type(self.user_base), BaseModel))
+        self.assertTrue(issubclass(type(self.user_create), UserBase))
+        self.assertTrue(issubclass(type(self.user), UserBase))
+
 
     def test_user_base_attrs(self):
         #test that the attribute of the UserBase class exists
@@ -37,8 +51,15 @@ class TestUser(unittest.TestCase):
         self.assertTrue('password' in self.user_create)
         self.assertTrue('first_name' in self.user_create)
         self.assertTrue('last_name' in self.user_create)
+
        
-    def test_attributes_type(self):
+
+    def test_user_attrs(self):
+        #test that the attributes of the User class exists
+        self.assertTrue('id' in self.user)
+        self.assertTrue('is_active' in self.user)
+
+    def test_attributes_type_is_string(self):
         """testing the variable types the class attributes accept"""
         self.assertEqual(type(self.user_base.email), str)
         self.assertEqual(type(self.user_create.password), str)
@@ -77,6 +98,8 @@ class TestUser(unittest.TestCase):
     def test_user_delete_attr(self):
         #testing that the attributes of UserDelete class exists
         self.assertTrue(hasattr(UserDelete, "id"))
+        self.assertEqual(type(self.user.id), int)
+        self.assertEqual(type(self.user.is_active), bool)
 
 if __name__ == "__main__":
         unittest.main()
