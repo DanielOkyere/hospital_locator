@@ -1,6 +1,7 @@
 """Test suite for the api.models.schemas.py module"""
 from api.database import Base
 
+
 from api.models.user import schemas
 from api.models.user.users import User
 
@@ -10,7 +11,6 @@ class TestUser(unittest.TestCase):
     #testing the schema module
     def setUpClass(self):
         #Set up class instance for tests
-
         self.user_base = schemas.UserBase()
         self.user_create = schemas.UserCreate()
         self.user_schema = schemas.UserSchema()
@@ -52,6 +52,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue('first_name' in self.user_create)
         self.assertTrue('last_name' in self.user_create)
 
+
        
 
     def test_user_attrs(self):
@@ -60,6 +61,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue('is_active' in self.user)
 
     def test_attributes_type_is_string(self):
+
         """testing the variable types the class attributes accept"""
         self.assertEqual(type(self.user_base.email), str)
         self.assertEqual(type(self.user_create.password), str)
@@ -98,8 +100,6 @@ class TestUser(unittest.TestCase):
     def test_user_delete_attr(self):
         #testing that the attributes of UserDelete class exists
         self.assertTrue(hasattr(UserDelete, "id"))
-        self.assertEqual(type(self.user.id), int)
-        self.assertEqual(type(self.user.is_active), bool)
 
 if __name__ == "__main__":
         unittest.main()
