@@ -2,7 +2,8 @@ from typing import Any
 from typing import Generator
 import pytest
 import sys, os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) #this is to include backend dir in sys.path so that we can import from api, app.py
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))) 
+#this is to include backend dir in sys.path so that we can import from api, app.py
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
@@ -47,7 +48,7 @@ def db_session(app: FastAPI) -> Generator[SessionTesting, Any, None]:
 def client(app: FastAPI, db_session: SessionTesting
         ) -> Generator[TestClient, Any, None]:
     """ 
-    Create a new FastAPI TestClient that uses the `db_session` fixture        to override the `get_db` dependency that is injected into routes.
+    Create a new FastAPI TestClient that uses the `db_session` fixture to override the `get_db` dependency that is injected into routes.
     """
     def _get_test_db():
         try:
