@@ -16,7 +16,7 @@ def get_hospitals(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)
     return hospitals
 
 
-@router.get("/{hospital_name}", response_model=list[schemas.HospitalCreate])
+@router.get("/{hospital_name}", response_model=list[                                                                                        schemas.HospitalCreate])
 def get_hospitals_by_name(hospital_name: str, skip: int = 0, limit: int = 20, db: Session = Depends(get_db)):
     hospitals = crud.get_hospitalby_name(
         db, skip, limit, hospital_name=hospital_name)
