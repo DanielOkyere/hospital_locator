@@ -22,3 +22,9 @@ def test_read_users(client):
     assert response.status_code == 200
     assert response.json()["skip"] == "skip"
     assert response.json()["limit"] == "limit"
+
+def test_delete_user(client):
+    data = {"user_id": "int"}
+    response = client.delete("/{user_id}", json.dumps(data))
+    assert response.status_code == 200
+    assert response.json()["id"] == "user_id"
