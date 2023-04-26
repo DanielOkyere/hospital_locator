@@ -5,3 +5,4 @@ def test_create_user(client):
     response = client.post("/", json.dumps(data))
     assert response.status_code == 400
     assert response.json()["email"] == "user.email"
+    assert response.json() == {"detail": "Email already exist"}
