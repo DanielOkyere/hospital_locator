@@ -6,3 +6,12 @@ def test_create_user(client):
     assert response.status_code == 400
     assert response.json()["email"] == "user.email"
     assert response.json() == {"detail": "Email already exist"}
+
+def test_read_user(client):
+    data = {"user_id": "int", "response_model": "schemas.UserSchema"}
+    response = client.get("/{user_id}", json.dumps(data))
+    assert response.status_code == 200
+    assert response.json()["user_id"] == "user_id"
+    if db_user is None:
+       assert response.status_code == 404
+       assert response.json() == {"detail": "User not found"}
