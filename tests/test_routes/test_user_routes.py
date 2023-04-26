@@ -15,3 +15,10 @@ def test_read_user(client):
     if db_user is None:
        assert response.status_code == 404
        assert response.json() == {"detail": "User not found"}
+
+def test_read_users(client):
+    data = {"response_model":"list[schemas.UserSchema]", "skip":"int = 0", "limit":"int = 100"}
+    response = client.get("/", json.dumps(data))
+    assert response.status_code == 200
+    assert response.json()["skip"] == "skip"
+    assert response.json()["limit"] == "limit"
