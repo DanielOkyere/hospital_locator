@@ -1,4 +1,6 @@
 import json
+from tests.test_routes import configtest.py
+from api.models.user import schemas, crud
 
 def test_create_user(client):
     data = {"user":"schemas.UserCreate", "email":"user.email","response_model":"schemas.UserSchema"}
