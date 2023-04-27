@@ -1,4 +1,5 @@
 import json
+import configtest.py
 
 def test_get_hospitals(client):
     data = {"response_model": "list[schemas.HospitalCreate]", "skip":"int = 0", "limit": "int = 100"}
